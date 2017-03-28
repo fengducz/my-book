@@ -1,0 +1,31 @@
+<h3>评论</h3>
+<div class="row">
+    <div class="col-md-8">
+    
+     <ul class="recipes">
+		  <li ng-repeat="x in pingluns">
+		  	<div class="biaoti"> <h4>{{x.biaoti}}</h4> <h5><a ng-href="/#/view/{{recipe.id}}" >{{x.username}}</a>&nbsp;<span>{{x.date| date:'yyyy-MM-dd HH:mm:ss Z'}}</span></h5>
+		    <div class="neirong"><p>{{x.pinglun}}</p></div></div>
+		  </li>
+      <li >
+        <div><a ng-href="/#/view/{{recipe.id}}">{{pinglun.biaoti}}</a></div>
+        <div><a ng-href="/#/view/{{recipe.id}}">{{pinglun.pinglun}}</a></div>
+      </li>
+	</ul>
+    </div>
+    <div class="col-md-4">我的评论<%= book._id %>
+    <form> 
+    <div class="form-group"> 
+    <label>标题</label> 
+    <input class="form-control" ng-model="pinglun.biaoti"
+></input> </div> 
+    <div class="form-group"> 
+    
+    <input class="form-control" value="<%= book._id %>"></input>
+</div>
+    <div class="form-group"> 
+    <label>评论</label> 
+    <textarea class="form-control" rows="4" ng-model="pinglun.pinglun"></textarea> </div> 
+    <input type="button" class="btn btn-primary" value="保存" ng-click="save()"></input> </form>
+</div>
+  </div>

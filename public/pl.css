@@ -1,0 +1,14 @@
+.neirong {
+	display: none;
+	border: 1px solid #C2C2C2;
+	padding: 10px;
+	max-height:300px;
+	overflow:auto;
+}
+.biaoti h5 span {
+	font-size: 10px;
+}
+.biaoti:hover  .neirong {
+	display: block;
+	
+}

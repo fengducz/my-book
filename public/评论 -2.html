@@ -1,0 +1,23 @@
+<h3>笔记</h3>
+
+<ul class="recipes">
+          <li ng-repeat="x in bijis">
+            <div class="biaoti"><h4>{{x.biaoti}}</h4><h5><a ng-href="/#/view/{{recipe.id}}" >{{x.username}}</a>&nbsp;<span>{{x.date| date:'yyyy-MM-dd HH:mm:ss Z'}}</span></h5>
+            <div class="neirong"><p ng-bind-html="x.biji"></p></div></div>
+          </li>
+      
+    </ul>
+
+<div ng-controller="editorCtrl">
+    <p>我的评论</p>
+    <div class="form-group"> 
+    <label>标题</label> 
+    <input class="form-control" ng-model="biji.biaoti"
+></input> </div>
+    <div ng-model="biji.biji" contenteditable="true" style="height: 300px;"></div>
+    <button type="button" class="btn btn-success" ng-click="save()">保存</button>
+</div>
+    
+
+
+

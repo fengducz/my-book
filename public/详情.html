@@ -1,0 +1,125 @@
+
+	<div class="main">
+		<div class="bookpt">
+			<a href="">首页</a><span>&nbsp;&gt;&nbsp;</span>
+			<a href="">基础科学</a><span>&nbsp;&gt;&nbsp;</span>
+			<a href="">物理学</a><span>&nbsp;&gt;&nbsp;</span>
+			<a href="">量子力学</a>
+		</div>
+		<div class="bookbd" >
+			<div class="bookbd1"><img src="/img/{{book.img}}" alt="" style="width: 350px;height:350px;">
+			<ul ng-bind-html="book.jieshao">
+				
+				</ul></div>
+			<div class="bookbd2">
+			<div class="bookbody2l">
+			<h3>预备知识：</h3>
+			<div class="booktj"><div class="booktjshow1"><ul>
+				<li><a href=""><img src="/img/fmwlxjy.jpg" alt=""><p></p></a></li>
+				<li><a href=""><img src="/img/fmwlxjy.jpg" alt=""></a></li>
+				<li><a href=""><img src="/img/fmwlxjy.jpg" alt=""></a></li>
+				<li><a href=""><img src="/img/lzlxgl.jpg" alt=""></a></li>
+			</ul></div>
+			<a href="javascript:;" class="arrow" id="prev1">&lt;</a>
+			<a href="javascript:;" class="arrow" id="next1">&gt;</a>
+			</div>
+			<h3>进步深入：</h3>
+			<div class="booktj"><div class="booktjshow2"><ul>
+				<li><a href=""><img src="/img/fmwlxjy.jpg" alt=""><p></p></a></li>
+				<li><a href=""><img src="/img/fmwlxjy.jpg" alt=""></a></li>
+				<li><a href=""><img src="/img/fmwlxjy.jpg" alt=""></a></li>
+				<li><a href=""><img src="/img/lzlxgl.jpg" alt=""></a></li>
+			</ul></div>
+			<a href="javascript:;" class="arrow" id="prev2">&lt;</a>
+			<a href="javascript:;" class="arrow" id="next2">&gt;</a>
+			</div>
+			</div>
+
+			<div class="bookbody2r">
+			<div class="context"><p>《量子力学概论(翻译版)(原书第2版)》译自美国David J.Griffiths教授所著《Introduction to Quantum Mechanics》（Second Edition），是“时代教育·国外高校优秀教材精选”系列之一，其内容包含了我国大学量子力学最主要的内容。《量子力学概论(翻译版)(原书第2版)》的特色是：强调量子力学的实验基础和基本概念，讲解直接从薛定谔方程开始，同时力图体现现代物理学内容，把问题扩展到多个前沿的研究领域，如统计物理、固体物理、粒子物理等；在写法上，作者从务实的角度出发，着重于交互式的写作，采用对话式的语言，叙述简明，文笔流畅。力图改变量子力学难于理解、难于接受的教学状况。</p></div>
+			<div class="relate"><img src="/img/pingfen.jpg" alt=""><ul>
+				<li><a href="">jd</a></li>
+				<li><a href="">ymx</a></li>
+				<li><a href="">tb</a></li>
+				<li><a href="">db</a></li>
+			</ul></div>
+			</div>
+
+
+			</div>
+		</div>
+		<div class="bookpl" >
+			<div class="container">
+	  			<div class="row">
+		    		<div class="col-md-2">
+		      		<div id="focus"><a href="/#/book"><h3>评论</h3></a></div>
+		      		<div><a href="/#/book"><h3>笔记</h3></a></div>
+		      		<button ng-click="toggle()"  class="btn btn-info">切换</button>
+		    		</div>
+		    		<div >
+		    		<div class="col-md-10"  ng-hide="myVar">
+			    		<h3>评论</h3>
+						<div class="row">
+				    		<div class="col-md-8" >
+				     		<ul class="recipes">
+						  	<li ng-repeat="x in pingluns">
+						  	<div class="biaoti"> <h4>{{x.biaoti}}</h4> <h5><a ng-href="/#/view/{{recipe.id}}" >{{x.username}}</a>&nbsp;<span>{{x.date| date:'yyyy-MM-dd HH:mm:ss Z'}}</span></h5>
+						    <div class="neirong"><p>{{x.pinglun}}</p></div></div>
+						  	</li>
+				      		<li >
+				        	<div><a ng-href="/#/view/{{recipe.id}}">{{pinglun.biaoti}}</a></div>
+				        	<div><a ng-href="/#/view/{{recipe.id}}">{{pinglun.pinglun}}</a></div>
+				      		</li>
+							</ul>
+						    </div>
+					    <div class="col-md-4" >我的评论
+					    <form> 
+					    <div class="form-group"> 
+					    <label>标题</label> 
+					    <input class="form-control" ng-model="pinglun.biaoti" ></input> </div> 
+					    <div class="form-group"> 
+					    <label>评论</label> 
+					    <textarea class="form-control" rows="4" ng-model="pinglun.pinglun"></textarea> </div> 
+					    <input type="button" class="btn btn-primary" value="保存" ng-click="savepl()"></input> 
+					    </form>
+						</div>
+					  </div>
+					 </div>
+
+					<div class="col-md-10" ng-show="myVar">
+			    		<h3>笔记</h3>
+
+						<ul class="recipes">
+				          <li ng-repeat="x in bijis">
+				            <div class="biaoti"><h4>{{x.biaoti}}</h4><h5><a ng-href="/#/view/{{recipe.id}}" >{{x.username}}</a>&nbsp;<span>{{x.date| date:'yyyy-MM-dd HH:mm:ss Z'}}</span></h5>
+				            <div class="neirong"><p ng-bind-html="x.biji"></p></div></div>
+				          </li>
+						      
+						</ul>
+
+						<div class="mybj">
+						    <p>我的笔记</p>
+						    <div class="form-group"> 
+						    <label>标题</label> 
+						    <input class="form-control" ng-model="biji.biaoti"></input> </div>
+						    <div ng-model="biji.biji" contenteditable="true" style="height: 300px;"></div>
+						    <button type="button" class="btn btn-success" ng-click="savebj()">保存</button>
+						</div>
+					 </div>
+					 </div>
+				</div>
+			</div>
+		</div>
+	
+
+	</div>
+
+	
+	
+	<script>
+
+	</script>
+
+
+
+
