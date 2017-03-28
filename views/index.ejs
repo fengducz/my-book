@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="js/myfocus-2.0.1.min.js"></script>
+	<script type="text/javascript">
+		myFocus.set({
+	    id:'boxID',//焦点图盒子ID
+	    pattern:'mF_fancy',//风格应用的名称
+	    time:3,//切换时间间隔(秒)
+	    trigger:'click',//触发切换模式:'click'(点击)/'mouseover'(悬停)
+	    loadIMGTimeout:"0",
+	    width:996,//设置图片区域宽度(像素)
+	    height:432,//设置图片区域高度(像素)
+	    txtHeight:'default'//文字层高度设置(像素),'default'为默认高度，0为隐藏
+		});
+	</script>
+</head>
+<body>
+	<div class="head">
+		<div class="headbody">
+			<div class="logo">
+				<a href=""><img src="img/logo.jpg" alt="logo" width=40px height=40px ></a>
+			</div>
+
+			<div class="check">
+				<div class="search">
+				<form action="https://www.baidu.com/s" target="_blank" method="get">
+					<input type="text" class="it">
+					<input type="submit" value="" class="s">
+				</form>
+				</div>
+
+				<div class="gouwuche"><a href=""><img src="img/gwc.jpg" alt=""  width="30" height="30"; ></a>
+				<a  href="">购物车</a>
+				</div>
+				<%  if(!ss){ %>
+				<div class="dl"><p>登录</p>
+				</div>
+				<% }else{ %>
+				<div class="ydl"><%= ss.username %> 
+				<div class="user"><h3>我的笔记</h3><a href="/out">退出登录</a></div></div>
+				<% } %>
+			</div>
+
+			<div class="list">
+				<ul>
+					<li><a href="">路径</a></li>
+					<li><a href="">视频</a></li>
+					<li><a href="">笔记</a></li>
+					<li><a href="">论坛</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="nav">
+		<ul class="menu">
+			<div class="topmenu">
+			<h3>书籍分类</h3>
+			</div>
+			<li><a href="">哲学</a><span></span><div class="submenu"><div class="submenubody">
+				<dl><dt>中国哲学</dt></dl>
+				<dl><dt>外国哲学</dt></dl>
+				<dl><dt>逻辑学</dt></dl>
+				<dl><dt>宗教学</dt></dl>
+				<dl><dt>美学伦理学</dt></dl>
+				<img src="img/n1.png" alt="">
+				</div></div></li>
+			<li><a href="">历史</a><span></span><div class="submenu"><div class="submenubody">
+				<dl><dt><a href="">中国史</a></dt>
+				<dd><a href="">史前</a><a href="">夏商周</a><a href="">春秋战国</a><a href="">秦汉</a><a href="">魏晋南北朝</a><a href="">隋唐五代</a><a href="">宋辽金元</a><a href="">明清</a><a href="">近现代</a></dd></dl>
+				<dl><dt>世界史</dt></dl>
+				<dl><dt>史学理论</dt></dl>
+				<dl><dt>考古</dt></dl>
+				<dl><dt>其他</dt></dl>
+				<img src="img/n2.png" alt="">
+			</div></div></li>
+			<li><a href="">文学</a><span></span><div class="submenu"><div class="submenubody">
+				<dl><dt>中国文学</dt></dl>
+				<dl><dt>外国文学</dt></dl>
+				<dl><dt>文学理论</dt></dl>
+				<dl><dt>名著</dt></dl>
+				<dl><dt>新闻传播学</dt></dl>
+				<img src="img/n3.png" alt="">
+				</div></div></li>
+			<li><a href="">艺术</a><span></span><div class="submenu"><div class="submenubody">
+				<dl><dt>艺术学理论</dt></dl>
+				<dl><dt>音乐与舞蹈学</dt></dl>
+				<dl><dt>戏剧与影视学</dt></dl>
+				<dl><dt>美术学</dt></dl>
+				<dl><dt>设计学</dt></dl>
+				<img src="img/n4.png" alt="">
+				</div></div></li>
+			<li><a href="">教育社科</a><span></span><div class="submenu"><div class="submenubody">
+				<dl><dt>教育学</dt></dl>
+				<dl><dt>心理学</dt></dl>
+				<dl><dt>社会学</dt></dl>
+				<dl><dt>人类学</dt></dl>
+				<dl><dt>民族民俗学</dt></dl>
+				<img src="img/n5.png" alt="">
+				</div></div></li>
+			<li><a href="">政治法律</a><span></span><div class="submenu"><div class="submenubody">
+				<dl><dt>政治学</dt></dl>
+				<dl><dt>国际政治</dt></dl>
+				<dl><dt>外交学</dt></dl>
+				<dl><dt>法学</dt></dl>
+				<dl><dt>其他</dt></dl>
+				<img src="img/n6.png" alt="">
+				</div></div></li>
+			<li><a href="">经济管理</a><span></span><div class="submenu"><div class="submenubody">
+				<dl><dt>经济学</dt></dl>
+				<dl><dt>金融学</dt></dl>
+				<dl><dt>国际贸易</dt></dl>
+				<dl><dt>管理学</dt></dl>
+				<dl><dt>公共行政学</dt></dl>
+				<img src="img/n7.png" alt="">
+				</div></div></li>
+			<li><a href="">基础科学</a><span></span><div class="submenu"><div class="submenubody">
+				<dl><dt>数学</dt></dl>
+				<dl><dt><a href="bootstrop路径分类.html"  target="_blank">物理学</a></dt>
+				<dd><a href="">普通物理学</a><a href="">数学物理方法</a><a href="">理论力学</a><a href="">电动力学</a><a href="">热力学与统计力学</a><a href="">量子力学</a><a href="">固体物理</a><a href="">高等量子力学</a><a href="">场论</a><a href="">广义相对论</a></dd>
+				</dl>
+				<dl><dt>化学</dt></dl>
+				<dl><dt>生命科学</dt></dl>
+				<dl><dt>天文学</dt></dl>
+				<dl><dt>地质</dt></dl>
+				<img src="img/n8.png" alt="">
+				</div></div></li>
+			<li><a href="">工程技术</a><span></span><div class="submenu"><div class="submenubody">
+				<dl><dt>机械</dt></dl>
+				<dl><dt>材料</dt></dl>
+				<dl><dt>电子</dt></dl>
+				<dl><dt>计算机</dt></dl>
+				<dl><dt>建筑</dt></dl>
+				<dl><dt>土木</dt></dl>
+				<img src="img/n9.png" alt="">
+				</div></div></li>
+			<li><a href="">农医军事</a><span></span><div class="submenu"><div class="submenubody">
+				<dl><dt>农学</dt></dl>
+				<dl><dt>医学</dt></dl>
+				<dl><dt>中医学</dt></dl>
+				<dl><dt>军事学</dt></dl>
+				<dl><dt>其他</dt></dl>
+				<img src="img/n10.png" alt="">
+				</div></div></li>
+		</ul>
+
+		<div id="boxID"><!--焦点图盒子-->
+	  		 <div class="loading"><img src="img/loading.gif" alt="请稍候..." /></div> <!--载入画面(可删除)-->
+	  		<div class="pic"><!--内容列表(li数目可随意增减)-->
+	  			<ul>
+			        <li><a href="#"><img src="img/1a.jpg" thumb="" alt="标题1" text="详细描述1" width="996" height="434" /></a></li>
+			        <li><a href="#"><img src="img/2a.jpg" thumb="" alt="标题2" text="详细描述2" width="996" height="434" /></a></li>
+			        <li><a href="#"><img src="img/3a.jpg" thumb="" alt="标题3" text="详细描述3" width="996" height="434" /></a></li>
+			        <li><a href="#"><img src="img/4a.jpg" thumb="" alt="标题4" text="详细描述4" width="996" height="434" /></a></li>
+			        <li><a href="#"><img src="img/5a.jpg" thumb="" alt="标题5" text="详细描述5" width="996" height="434" /></a></li>
+	  			</ul>
+	  		</div>
+		</div>
+	</div>
+
+	<div class="main">
+		<div class="left">
+			<div class="route" id="route1">
+				<div class="r1" >
+					<h1>历史</h1><span><a href="">更多</a></span>
+					<p>究天人之际<br>通古今之变<br>成一家之言</p>
+
+				</div>
+				<div class="r2">
+					<div class="r3"><img src="img/qqts.jpg" alt=""><p>斯塔夫里阿诺斯的这部潜心力作自问世以来，赞誉如潮，可谓经典之中的经典。正如书名所说，具有全球视野的一本全球通史。</p></div>
+					<div class="r3"><img src="img/gsdg.jpg" alt=""></div>
+				</div>
+				<div class="r2">
+					<div class="r3"><img src="img/zgjds.jpg" alt=""></div>
+					<div class="r3"><img src="img/ctsl.jpg" alt=""></div>
+				</div>
+				
+			</div>
+
+			<div class="route" id="route2">
+				<div class="r1" >
+					<h1>物理</h1><span><a href="bootstrop路径分类.html">更多</a></span>
+					<p><code>E = MC*2</code></p>
+
+				</div>
+				<div class="r2">
+					<div class="r3"><img src="img/fmwlxjy.jpg" alt=""><p>从普通物理水平出发，注重物理分析，深入浅出，避免运用高深烦琐的数学方程，具有初等微积分知识阅读起来就不会十分困难。至于大学物理系的师生和物理工作者更能从此书中获得教益。</p></div>
+					<div class="r3"><img src="img/ddlx.jpg" alt=""></div>
+				</div>
+				<div class="r2">
+					<div class="r3"><img src="img/ldlx.jpg" alt=""></div>
+					<div class="r3"><img src="img/lzlxgl.jpg" alt=""></div>
+				</div>				
+			</div>				
+		</div>
+
+		<div class="right">
+			<div class="rank">
+				<div class="rankhead"><h2>热门</h2></div>
+				<div class="rankbody"><ol>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+				</ol></div>
+			</div>
+			<div class="renew">
+			<div class="renewhead"><h2>更新</h2></div>
+				<div class="renewbody"><ol>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+					<li>内容内容内容内容内容</li>
+				</ol></div>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="foot">
+		<div class="fcontainer">
+		<div class="footbody1">		
+				<a href="" id="f1"></a>
+				<a href="" id="f2"></a>
+				<a href="" id="f3"></a>
+				<a href="" id="f4"></a>		
+		</div>
+		<div class="footbody2">
+			<ul>
+				<li><a href="" >关于我们</a></li>
+				<li><a href="" >企业合作</a></li>
+				<li><a href="" >人才招聘</a></li>
+				<li><a href="" >联系我们</a></li>
+			</ul>
+		</div>
+		<div class="footbody3">
+			<h4>&copy; 2017   京ICP备 13046642号-2</h4>
+		</div>
+		</div>
+	</div>
+
+	<div class="goto">
+		<a href="">意见反馈</a><a href="">常见问题</a><a href="">APP下载</a><a href="#top">返回顶部</a>
+	</div>
+
+	
+	<div class="login login1">
+		<div class="login-t"><h1>欢迎登陆</h1></div>
+		<div class="login-b">
+			<form action="/denglu" method="post">
+			<input type="text" name="username" class="denglu" placeholder="请输入用户名">
+			<input type="password" name="userpsw" class="mima">
+			<div class="rm">
+			<input type="checkbox" name="sex" id="male" value="male">
+			<label for="male">记住我</label></div>
+			<input type="button" class="bt dlb" value="登录">
+			<input type="button" class="bt bt1" value="注册">
+
+			</form>
+		</div>
+	</div>
+
+	<div class="login register">
+		<div class="login-t"><h1>欢迎注册</h1></div>
+		<div class="login-b register-b">
+			<form action="/zhuce" method="post">
+			<input type="text" name="username" class="denglu zc1 zcn" value="起个名字吧">
+			<input type="text" name="useremail" class="denglu zc1 zcy" value="手机号| 邮箱">
+			<input type="password" name="userpsw" class="mima zc1 zcm">
+			<div class="rm">
+			<input type="checkbox" name="sex" id="male" value="male">
+			<label for="male"> 我同意并遵守<a href="">服务条款</a></label></div>
+			
+			<input type="button" class="bt zcb" value="注册">
+
+			</form>
+		</div>
+	</div>
+	
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+
+
+	$(document).ready(function(){
+			
+		
+		$(".menu li").hover(function(){
+			var index = $(this).prevAll().length;
+			var num = -123 - (index - 1)*19;
+			$(".submenu").css("top",num + "px");
+			
+  	});
+	});
+
+
+// 登陆
+	$(document).ready(function(){
+		$(".dl").click(function(){
+    		var sheight =$(document).height();
+			var swidth =$(window).width();
+
+			var loginbg = $("<div></div>").addClass("login-bg").css("height",sheight + "px");
+			$(".goto").after(loginbg);
+
+			$(".login-bg").click(function(){
+    		 	$(this).remove();
+    		 	$(".login").css("display","none");
+			});	
+			$(".login1").css("display","block");
+		});  
+
+		$(".bt1").click(function(){
+			$(".register").css("display","block")
+		}); 
+	});
+
+
+	$(".zc1").blur(function(){
+		if(!this.value){
+			$(this).css("border-bottom","2px solid #EE0000");
+			alert("不能为空");
+		}else{
+			$(this).css("border-bottom","2px solid white");
+		}
+  
+});
+
+	$(".zcb").click(function(){
+    $.post("/zhuce",
+    {
+        username:$(".zcn").val(),
+        useremail:$(".zcy").val(),
+        userpsw:$(".zcm").val()
+    },
+        function(result){
+        	if(result =="-1"){
+        		alert("重复");
+        	}
+        	else{
+        		alert("成功");
+        	};
+        
+    });
+});
+	$(".dlb").click(function(){
+    $.post("/denglu",
+    {
+        username:$(".denglu").val(),
+        userpsw:$(".mima").val()
+    },
+        function(result){
+        	if(result =="-1"){
+        		alert("未注册");
+        	}
+        	else if(result =="-3"){
+        		alert("密码错误");
+        	}
+        	else{
+        		alert("成功");
+        		$(".login-bg").remove();
+    		 	$(".login").css("display","none");
+    		 	location.reload(true);
+        	}
+        
+    });
+});
+
+
+
+
+
+	</script>
+
+
+</body>
+</html>

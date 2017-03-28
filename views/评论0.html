@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>评论</title>
+	<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.min.js"></script>
+  <script src="http://apps.bdimg.com/libs/angular-resource/1.2.16/angular-resource.js"></script>
+  <script src="http://cdn.bootcss.com/angular-sanitize/1.6.2/angular-sanitize.min.js"></script>
+  <!-- <script src="scripts/directives/directives.js"></script>
+  <script src="scripts/services/services.js"></script>
+  <script src="scripts/controllers/controllers.js"></script> -->
+  <link href="bootstrap.min.css" rel="stylesheet">
+  <link href="pl.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="wangEditor/dist/css/wangEditor.min.css">
+</head>
+<body ng-app="myapp">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <div id="focus"><a href="xiangqing#/"><h3>评论</h3></a></div>
+      <div><a href="xiangqing#/biji"><h3>笔记</h3></a></div>
+    </div>
+    <div class="col-md-10"><div ng-view></div></div>
+  </div>
+</div>
+	
+
+
+  <script type="text/javascript" src="wangEditor/dist/js/lib/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="wangEditor/dist/js/wangEditor.js"></script>
+    
+  <script>
+ 
+
+
+     var app = angular.module('myapp', ['ngResource','ngRoute','ngSanitize']);　　
+            app.config(['$routeProvider', function($routeProvider){
+                $routeProvider
+                .when('/',{
+                  templateUrl: '评论 - 1.html',
+                  controller: 'ListCtrl',})
+                .when('/biji',{templateUrl:'评论 -2.html',
+                    controller: 'editorCtrl',})
+                
+                .otherwise({redirectTo:'/'});
+            }]);
+            app.controller('ListCtrl', ['$scope', '$resource', '$location',
+                function($scope, $resource,$location){ 
+              var Videos = $resource('/pinglun'); 
+               Videos.query(function(pingluns){ 
+                 $scope.pingluns = pingluns; }); 
+              $scope.save = function(){ 
+                var Videos = $resource('/pinglun'); 
+                Videos.save($scope.pinglun, function(){ 
+                  $location.path('/'); }); };
+
+            }]);
+
+
+
+
+
+
+            app.controller('editorCtrl', ['$scope', '$resource', '$location',
+              function ($scope, $resource,$location) {
+              $scope.editorContent = '';
+              var Videos = $resource('/biji'); 
+               Videos.query(function(bijis){ 
+                 $scope.bijis = bijis; });
+
+
+              $scope.save = function(){ 
+                var Videos = $resource('/biji'); 
+                Videos.save($scope.biji, function(){ 
+                  $location.path('/'); }); };
+
+
+
+
+        }]);
+        app.directive('contenteditable', function() {
+            return {
+                restrict: 'A' ,
+                require: '?ngModel',
+                link: function(scope, element, attrs, ngModel) {
+                    // 初始化 编辑器内容
+                    if (!ngModel) {
+                        return;
+                    } // do nothing if no ng-model
+                    // Specify how UI should be updated
+                    ngModel.$render = function() {
+                        element.html(ngModel.$viewValue || '');
+                    };
+                    // Listen for change events to enable binding
+                    element.on('blur keyup change', function() {
+                        scope.$apply(readViewText);
+                    });
+                    // No need to initialize, AngularJS will initialize the text based on ng-model attribute
+                    // Write data to the model
+                    function readViewText() {
+                        var html = element.html();
+                        // When we clear the content editable the browser leaves a <br> behind
+                        // If strip-br attribute is provided then we strip this out
+                        if (attrs.stripBr && html === '<br>') {
+                            html = '';
+                        }
+                        ngModel.$setViewValue(html);
+                    }
+        
+                    // 创建编辑器
+                    var editor = new wangEditor(element);
+                    editor.create();
+                }
+            };
+        });
+
+        </script>
+</body>
+</html>
